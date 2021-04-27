@@ -1,0 +1,178 @@
+.my-navbar {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 0.7em;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.name-logo {
+  font-size: 1.4rem;
+  padding: 0.2em 0.6em;
+  display: inline-block;
+  border-radius: 40px;
+  background-color: red;
+  margin: 0 !important;
+}
+.left-side-navbar {
+  display: flex;
+  align-items: center;
+}
+.left-side-navbar ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0.3em 0 0 0;
+  list-style: none;
+  margin-left: 0.7em;
+}
+.left-side-navbar h2 {
+  color: white;
+}
+.left-side-navbar svg {
+  fill: white;
+}
+.left-side-navbar ul li,
+.right-side-navbar .cart {
+  margin: 0 0.6em;
+}
+
+.register {
+  padding: 0.3em 0.6em;
+}
+
+.right-side-navbar {
+  display: flex;
+  align-items: center;
+  margin: 0.3em 0 0 0;
+}
+.left-side-navbar a,
+.right-side-navbar a {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+}
+.left-side-navbar a:hover,
+.right-side-navbar a:hover {
+  color: white;
+}
+.drop-links {
+  color: black;
+  position: relative;
+  z-index: 999;
+  font-size: 1.2rem;
+  text-decoration: none;
+  background-color: white;
+  display: block;
+}
+.drop-down-header li {
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+}
+.hamburger,
+.user {
+  display: none;
+  color: white;
+}
+.cart {
+  margin-left: 0.5em;
+}
+.cart i {
+  pointer-events: none;
+}
+
+.fa-bars {
+  pointer-events: none;
+}
+aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999999;
+  background-color: white;
+  transition: all 0.4s;
+  width: 0;
+}
+ul li {
+  list-style: none;
+}
+ul li a {
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+}
+
+.menu header button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+.menu header button i {
+  font-size: 1.8rem;
+}
+/* 
+.drop:active .menu {
+  height: 200px;
+}
+.drop:hover .menu ul {
+  height: 100%;
+  color: white;
+} */
+@media screen and (max-width: 769px) {
+  .link {
+    display: none;
+  }
+  .hamburger {
+    display: inline;
+  }
+
+  .user {
+    display: inline-block;
+  }
+  .hamburger i,
+  .user i,
+  .cart i {
+    font-size: 1.4rem;
+  }
+  aside {
+    width: 0%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .my-navbar {
+    padding-top: 1em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+  .left-side-navbar {
+    width: 50%;
+  }
+  .cart {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .right-side-navbar a {
+    margin: 0 0.1em;
+  }
+  /* .user {
+      margin-left: 0;
+      margin-right: 0.7em !important;
+    } */
+  .logo svg {
+    width: 35px;
+    height: 35px;
+  }
+  .logo h2 {
+    font-size: 1.4rem;
+  }
+}

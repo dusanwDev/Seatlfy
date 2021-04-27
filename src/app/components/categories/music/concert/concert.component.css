@@ -1,0 +1,125 @@
+.no-padding {
+  padding: 0 !important;
+}
+
+.get-tikets {
+  border: none;
+  outline: none;
+  padding: 0.2em 0.5em;
+  background-color: rgb(206, 239, 250);
+  color: blue;
+  font-size: 1.2rem;
+}
+.event-link {
+  text-decoration: none;
+  color: black;
+}
+.event-info {
+  padding-left: 0.8em;
+  /* border-left: 1px solid rgb(160, 160, 160); */
+}
+.event-link:hover .get-tikets {
+  color: white;
+  background-color: blue;
+  transition: all 0.5s;
+}
+.ticket {
+  padding: 0 !important;
+}
+.to-check-out {
+  display: none;
+  border: none;
+  outline: none;
+  color: blue;
+}
+.fa-chevron-right {
+  font-size: 1.4rem;
+}
+
+.fa-check {
+  color: green;
+}
+.place {
+  font-size: 1.5rem;
+}
+.sort-btn,
+.fav-btn {
+  background-color: inherit;
+  margin: 0 0.3em;
+  border: 1px solid blue;
+  padding: 0.3em 0.6em;
+}
+
+@media screen and (max-width: 768px) {
+  .col-md-6.event-day.no-padding.d-flex.align-items-center {
+    justify-content: center;
+  }
+  .col-8.d-flex.flex-column.justify-content-center {
+    padding-right: 0 !important;
+  }
+  .col-2.ticket.d-flex.align-items-center {
+    padding-right: 0.7em !important;
+  }
+  .genre-info h1 {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .get-tikets {
+    display: none;
+  }
+  .to-check-out {
+    display: inline;
+    background-color: transparent;
+  }
+  .get-tikets {
+    display: none;
+  }
+  .to-check-out {
+    display: inline;
+  }
+  .genre-info h1 {
+    font-size: 2.4rem;
+  }
+  .genre-info h3 {
+    font-size: 1.5rem;
+  }
+  .event-info h4 {
+    font-size: 1.3rem;
+  }
+  .col-2.date-day-time {
+    padding: 0 !important;
+  }
+  .game-name {
+    padding-right: 0 !important;
+    padding-left: 0.3em;
+  }
+  .game-day-h1 {
+    font-size: 1.1rem;
+  }
+  .row.py-3.border-bottom {
+    padding-left: 1.2em;
+    padding-bottom: 0.4em !important;
+  }
+  .date p {
+    font-size: 1rem;
+  }
+  .col-2.ticket.d-flex.align-items-center {
+    justify-content: center;
+  }
+
+  .col-2 {
+    padding: 0 !important;
+  }
+  .border-start.event-info h4 {
+    margin-bottom: 0.3em !important;
+  }
+  .border-start.event-info p {
+    color: rgb(78, 77, 77);
+  }
+}
+@media screen and (max-width: 375px) {
+  .fav-btn {
+    margin-top: 0.7em;
+  }
+}

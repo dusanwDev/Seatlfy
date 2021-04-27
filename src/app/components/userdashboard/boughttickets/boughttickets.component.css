@@ -1,0 +1,33 @@
+/* .ticket-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.ticket-container a {
+  margin-top: 1rem;
+}
+.card-favorite {
+  position: relative;
+  margin-left: 1em;
+}
+.card-favorite p {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  color: white;
+  background-color: rgba(7, 7, 7, 0.8);
+  padding: 0.3em 0.6em;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.card-favorite-img img {
+  border-radius: 15px;
+} */
+.no-padding {
+  padding: 0 !important;
+}
+a {
+  color: black;
+  text-decoration: none;
+}

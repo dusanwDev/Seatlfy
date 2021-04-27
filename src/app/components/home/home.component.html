@@ -1,0 +1,257 @@
+<div class="video-background vh-100 px-4">
+  <div class="video-container overflow-hidden h-100 w-100 position-absolute">
+    <video
+      class="w-100 h-100"
+      src="../../../assets/media/backvideo.mp4"
+      muted="true"
+      autoplay="true"
+      loop="true"
+      oncanplay="this.play()"
+      onloadedmetadata="this.muted = true"
+    ></video>
+  </div>
+  <div class="overlay w-100 h-100 position-absolute"></div>
+  <div class="header-content position-absolute" id="header">
+    <h1 class="mb-0 display-2 font-weight-bold">Let there be live.</h1>
+    <p class="mb-0">Your next best-night-ever is waiting.</p>
+    <p>And we have the tickets.</p>
+    <div class="input-field position-relative">
+      <input
+        type="text"
+        class="w-100"
+        placeholder="Search by club, artist or category"
+        [(ngModel)]="userInput"
+      />
+      <i class="fas fa-search position-absolute"></i>
+      <div class="div-search position-absolute w-100">
+        <a
+          class="text-decoration-none"
+          *ngFor="let events of allEvents | filter: userInput:'performer'"
+          [routerLink]="['/categories/artist', events.performer]"
+        >
+          <div
+            class="search-item w-100 d-flex"
+            *ngIf="events.genre === 'Music'"
+          >
+            <div class="search-img">
+              <img [src]="events.img" class="w-100 h-100" alt="" />
+            </div>
+            <div class="search-info ms-4">
+              <p class="mb-0">{{ events.performer }}</p>
+              <p class="mb-0">{{ events.genre }}</p>
+            </div>
+          </div></a
+        >
+        <a
+          *ngFor="let events of allEvents | filter: userInput:'performer'"
+          class="text-decoration-none"
+          [routerLink]="['/categories/sport/club', events.performer]"
+        >
+          <div class="search-item w-100" *ngIf="events.genre === 'Sport'">
+            <div class="search-img">
+              <img [src]="events.img" class="w-100 h-100" alt="" />
+            </div>
+            <div class="search-info ms-4">
+              <p class="mb-0">{{ events.performer }}</p>
+              <p class="mb-0">{{ events.genre }}</p>
+            </div>
+          </div></a
+        >
+        <a
+          *ngFor="let events of allEvents | filter: userInput:'performer'"
+          class="text-decoration-none"
+          [routerLink]="['/categories/theathres/theathre', events.performer]"
+        >
+          <div class="search-item w-100" *ngIf="events.genre === 'Theathre'">
+            <div class="search-img">
+              <img [src]="events.img" class="w-100 h-100" alt="" />
+            </div>
+            <div class="search-info ms-4">
+              <p class="mb-0">{{ events.performer }}</p>
+              <p class="mb-0">{{ events.genre }}</p>
+            </div>
+          </div></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<main class="mt-3 main px-1">
+  <div class="container-fluid overflow-hidden">
+    <header>
+      <h1>Upcoming events</h1>
+    </header>
+    <div class="row">
+      <div
+        class="col-md-4 mt-2 no-padding"
+        *ngFor="let event of allEvents | test: 'id':'upcoming_event'"
+      >
+        <div class="upcoming-card" [imgPath]="event.img" [imgUrl]="event.img">
+          <div class="img-upcoming overflow-hidden w-100">
+            <img [src]="event.img" class="w-100 h-100" alt="events.img" />
+          </div>
+          <div class="upcoming-text d-flex">
+            <div class="event-date text-white text-center">
+              <h3 class="mb-0">{{ event.month }}</h3>
+              <h4 class="mb-0">{{ event.dayNumber }}</h4>
+            </div>
+            <div class="event-info">
+              <h2 class="performer text-white mb-0">{{ event.performer }}</h2>
+              <p class="venue mb-0">{{ event.venue }}</p>
+              <p class="time d-none mb-0">{{ event.time }}</p>
+            </div>
+          </div>
+          <button
+            hoverDirective
+            [defaultColor]="'rgb(53,53,53)'"
+            [hoverColor]="'white'"
+            (click)="addToCart(event)"
+            class="d-block w-100 text-white"
+          >
+            Buy Now
+          </button>
+
+          <div
+            class="upper-card position-absolute d-flex justify-content-between align-items-center"
+          >
+            <p class="mb-0">{{ event.price | currency: USD }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="mt-5"><h1>Popular</h1></header>
+    <header class="mt-5 mb-2"><h3>Concerts</h3></header>
+    <div class="row">
+      <div
+        class="col-md-3 no-padding"
+        *ngFor="let popular of allEvents | test: 'id':'popular'"
+      >
+        <a [routerLink]="['/categories/artist', popular.performer]">
+          <div class="popular-card">
+            <div class="popular-img">
+              <img [src]="popular.img" class="w-100 h-100" alt="" appZoomin />
+            </div>
+            <div class="pupular-info">
+              <h4 class="mt-0 mb-0">{{ popular.performer }}</h4>
+              <p class="mt-0 mb-0">{{ popular.concerts.length }} events</p>
+            </div>
+          </div></a
+        >
+      </div>
+    </div>
+    <header class="mt-5 mb-2"><h3>Categories</h3></header>
+    <div class="row">
+      <a
+        routerLink="/categories/music/concert"
+        class="col-md-3 overflow-hidden no-padding"
+      >
+        <div class="category position-relative music"><p>Music</p></div>
+      </a>
+      <a
+        routerLink="/categories/sport/games"
+        class="col-md-3 overflow-hidden no-padding"
+      >
+        <div class="category position-relative sport cat-center">
+          <p>Sport</p>
+        </div></a
+      >
+      <a
+        routerLink="/categories/theathres/schedule"
+        class="col-md-3 no-padding overflow-hidden"
+      >
+        <div class="category position-relative theathre cat-center">
+          <p>Theathre</p>
+        </div></a
+      >
+      <a
+        routerLink="/categories/movies"
+        class="col-md-3 overflow-hidden no-padding"
+      >
+        <div class="category position-relative movies-cat">
+          <p>Movies</p>
+        </div></a
+      >
+    </div>
+    <header class="mt-5 mb-2">
+      <h3>Sports</h3>
+    </header>
+    <div class="row">
+      <div class="col-md-6 no-padding">
+        <!-- Da sports ne izlazi -->
+        <div class="row mx-auto">
+          <div
+            class="col-md-6 no-padding"
+            *ngFor="let sport of allEvents | test: 'id':'sports'"
+          >
+            <a [routerLink]="['/categories/sport/club', sport.performer]">
+              <div class="popular-card">
+                <div class="popular-img">
+                  <img
+                    [src]="sport.img"
+                    class="w-100 h-100 overflow-hidden"
+                    appZoomin
+                    alt=""
+                  />
+                </div>
+                <div class="pupular-info">
+                  <h4 class="mt-0 mb-0">{{ sport.performer }}</h4>
+                  <p class="mt-0 mb-0">{{ sport.games.length }} events</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 no-padding overflow-hidden">
+        <a href="JavaScript:void(0)">
+          <div class="popular-card sport-inner  h-100">
+            <div class="popular-img h-100 w-100">
+              <img
+                class="w-100 h-100 overflow-hidden"
+                src="https://i2-prod.dublinlive.ie/incoming/article19026914.ece/ALTERNATES/s1200c/0_EjLk4_iXkAgDVWnjpeg.jpg"
+                alt=""
+                appZoomin
+              />
+            </div></div
+        ></a>
+      </div>
+    </div>
+    <header class="mt-3 mb-2">
+      <h3>Theathre</h3>
+    </header>
+    <div class="row">
+      <div
+        class="col-md-6 theatre-section"
+        *ngFor="let theathre of allEvents | test: 'id':'theathre'"
+      >
+        <a
+          [routerLink]="['/categories/theathres/theathre', theathre.performer]"
+          class="d-inline-block h-100 w-100"
+        >
+          <div class="popular-card">
+            <div class="popular-img h-100 w-100 theathre-img">
+              <img [src]="theathre.img" class="w-100 h-100" alt="" appZoomin />
+            </div>
+            <div class="pupular-info">
+              <h4 class="mt-0 mb-0">{{ theathre.performer }}</h4>
+              <p class="mt-0 mb-0">
+                {{ theathre.theathreShows.length }} events
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>
+
+<a (click)="onEdit()" class="to-header position-fixed d-inline-block text-white"
+  ><i class="fas fa-arrow-up"></i
+></a>
+<app-added-to-cart
+  [userId]="user.userId"
+  *ngIf="showAddedToCart"
+></app-added-to-cart>
+<app-login-alert (click)="removeModal()" *ngIf="!showModal"></app-login-alert>
+<app-loader [displayLoader]="loading"></app-loader>

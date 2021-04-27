@@ -1,0 +1,102 @@
+<div class="banner-theathre">
+  <div class="genre-info">
+    <h1 class="text-white mb-0">Theathre</h1>
+    <p class="text-white mb-0">Tickets to your favotie theathre shows</p>
+  </div>
+  <div class="overlay"></div>
+</div>
+<main>
+  <div class="container" style="margin: 0 auto">
+    <div class="row">
+      <h1 class="mb-3 upcoming-title">Upcoming Theathres Shows</h1>
+
+      <div class="col-12">
+        <span>Sort by : </span>
+        <button class="sort-btn" (click)="newest(shows)">Newest</button
+        ><button class="sort-btn" (click)="oldest(shows)">Oldest</button>
+        <button class="fav-btn">
+          To favorites <i class="fas fa-heart"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <a class="event-link" *ngFor="let show of shows; let i = index">
+          <div class="row py-3 border-bottom">
+            <div class="col-2 date-day-time no-padding">
+              <div class="row">
+                <div
+                  class="col-lg-6 justify-content-center event-day event-day no-padding d-flex align-items-center"
+                >
+                  <h4 class="mb-0 show-day-h1">{{ show.day }}</h4>
+                </div>
+                <div class="col-lg-6 ms-1 no-padding">
+                  <div class="date">
+                    <p class="mb-0 text-center">{{ show.date }}</p>
+                    <p class="mb-0 text-center">{{ show.time }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="show-name col-8 d-flex flex-column justify-content-center"
+            >
+              <div class="border-start event-info">
+                <h4 class="mb-0">{{ show.show }}</h4>
+                <p class="mb-0">{{ show.theathreId }}</p>
+              </div>
+            </div>
+            <div class="col-2 ticket d-flex align-items-center">
+              <button class="get-tikets" (click)="buyTicket(show)">
+                Get Tickets
+              </button>
+              <button class="to-check-out" (click)="buyTicket(show)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <div class="ms-4 guarante-card">
+          <header
+            class="header-guarantee d-flex align-items-center justify-content-between pb-3"
+          >
+            <div class="header-h3">
+              <h4 class="mb-0">Shop Tickets Worry Free</h4>
+              <h4 class="mb-0">With Our 100% Guarantee</h4>
+            </div>
+            <div class="img-shield">
+              <img
+                src="https://dtr2k13nvgx2o.cloudfront.net/assets/images/global/guarantee/tn-guarantee-icon-blue-2x.png"
+                alt=""
+              />
+            </div>
+          </header>
+          <div class="worry-free-info-container pt-3">
+            <div class="worry-free-info">
+              <p>
+                <i class="fas fa-check text-success"></i> Same tickets as you
+                ordered, or better.
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Tickets will arrive
+                before the event
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Tickets will be valid
+                for entry
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Refunds for canceled
+                events
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-added-to-cart *ngIf="showAddedToCart"></app-added-to-cart>
+<app-login-alert (click)="removeModal()" *ngIf="!showModal"></app-login-alert>

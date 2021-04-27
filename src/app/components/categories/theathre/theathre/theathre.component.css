@@ -1,0 +1,169 @@
+.no-padding {
+  padding: 0 !important;
+}
+
+.banner-music {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  /* background-image: url(../../../../assets/media/artist.jpg); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.genre-info {
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  z-index: 99;
+}
+
+.genre-info h1 {
+  font-size: 4.7rem;
+  color: white;
+}
+.genre-info p {
+  font-size: 1.4rem;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+main {
+  margin-top: 323.75px;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.get-tikets {
+  border: none;
+  outline: none;
+  padding: 0.2em 0.5em;
+  background-color: rgb(206, 239, 250);
+  color: blue;
+  font-size: 1.2rem;
+}
+.event-link {
+  text-decoration: none;
+  color: black;
+}
+.event-info {
+  padding-left: 0.8em;
+  /* border-left: 1px solid rgb(160, 160, 160); */
+}
+.event-link:hover .get-tikets {
+  color: white;
+  background-color: blue;
+  transition: all 0.5s;
+}
+.ticket {
+  padding: 0 !important;
+}
+.to-check-out {
+  display: none;
+  border: none;
+  outline: none;
+  color: blue;
+}
+.fa-chevron-right {
+  font-size: 1.4rem;
+}
+
+.fa-check {
+  color: green;
+}
+.place {
+  font-size: 1.5rem;
+}
+.img-shield {
+  width: 40px;
+  height: 40px;
+}
+.img-shield img {
+  object-fit: contain;
+}
+.header-guarantee {
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.header-guarantee {
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.sort-btn,
+.fav-btn {
+  background-color: inherit;
+  margin: 0 0.3em;
+  border: 1px solid blue;
+  padding: 0.3em 0.6em;
+}
+span {
+  font-size: 1.2rem;
+}
+main {
+  margin-top: calc(55vh - 20px);
+}
+@media screen and (max-width: 768px) {
+  .event-day {
+    justify-content: center;
+  }
+  .genre-info h1 {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    margin-top: 280px;
+  }
+  .get-tikets {
+    display: none;
+  }
+  .to-check-out {
+    display: inline;
+    background-color: transparent;
+  }
+  .genre-info {
+    padding-left: 1em;
+  }
+  .genre-info h1 {
+    font-size: 2.3rem;
+  }
+  .genre-info h3 {
+    font-size: 1.5rem;
+  }
+  .event-info h4 {
+    font-size: 1.3rem;
+  }
+  .concert-name {
+    padding-right: 0 !important;
+    padding-left: 0.3em;
+  }
+  .row.py-3.border-bottom {
+    padding-left: 1.2em;
+    padding-bottom: 0.4em !important;
+  }
+  .date p {
+    font-size: 1rem;
+  }
+  .col-2.ticket.d-flex.align-items-center {
+    justify-content: center;
+  }
+  .border-start.event-info p {
+    color: rgb(78, 77, 77);
+  }
+}
+@media screen and (max-width: 375px) {
+  .fav-btn {
+    margin-top: 0.7em;
+  }
+}

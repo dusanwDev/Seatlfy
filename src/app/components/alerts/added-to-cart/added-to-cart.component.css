@@ -1,0 +1,15 @@
+.added-to-cart {
+  background-color: green;
+  position: fixed;
+  top: 1em;
+  right: 2em;
+  border-radius: 8px;
+  text-decoration: none;
+  z-index: 9999999;
+  /* visibility: hidden; */
+}
+
+.to-checkout {
+  font-size: 1.4rem;
+  border-top: 1px solid white;
+}

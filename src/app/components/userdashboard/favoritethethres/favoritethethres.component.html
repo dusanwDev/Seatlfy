@@ -1,0 +1,17 @@
+<header class="text-center">
+  <h1 class="mb-0">Favorite Theathres</h1>
+</header>
+<div class="ticket-container">
+  <a
+    href=""
+    *ngFor="let theatre of favoriteTheathre"
+    [routerLink]="['/categories/theathres/theathre', theatre.performer]"
+  >
+    <div class="card-favorite">
+      <div class="card-favorite-img">
+        <img [src]="theatre.img" alt="" />
+      </div>
+      <p class="mb-0">{{ theatre.performer }}</p>
+    </div></a
+  >
+</div>

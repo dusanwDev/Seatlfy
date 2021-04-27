@@ -1,0 +1,88 @@
+<header class="text-center">
+  <h1 class="mb-0">Bought Tickets</h1>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a class="event-link" *ngFor="let bought of boughtTickets">
+        <div class="row py-3 border-bottom">
+          <div class="col-2 date-day-time">
+            <div class="row">
+              <div
+                class="col-lg-6 event-day no-padding d-flex align-items-center justify-content-center"
+              >
+                <h4 class="mb-0 game-day-h1">
+                  {{ bought.dayName }}
+                </h4>
+                <h4 *ngIf="!bought.dayName" class="mb-0 game-day-h1">
+                  {{ bought.day }}
+                </h4>
+              </div>
+              <div class="col-lg-6 ms-1 no-padding">
+                <div class="date">
+                  <p class="mb-0 text-center">
+                    {{ bought.month }} {{ bought.date }} {{ bought.dayNumber }}
+                  </p>
+                  <p class="mb-0 text-center">{{ bought.time }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="game-name col-10 d-flex flex-column justify-content-center"
+          >
+            <div class="border-start event-info">
+              <h4 class="mb-0">
+                {{ bought.artist }} {{ bought.performer }} {{ bought.game }}
+                {{ bought.show }}
+              </h4>
+              <p class="mb-0">{{ bought.venue }} {{ bought.theathreId }}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- <div class="ticket-container">
+<a href="">
+  <div class="card-favorite">
+    <div class="card-favorite-img">
+      <img src="./artist.jpg" alt="" />
+    </div>
+    <p class="mb-0">Artist Name</p>
+  </div></a
+>
+<a href="">
+  <div class="card-favorite">
+    <div class="card-favorite-img">
+      <img src="./artist.jpg" alt="" />
+    </div>
+    <p class="mb-0">Artist Name</p>
+  </div></a
+>
+<a href="">
+  <div class="card-favorite">
+    <div class="card-favorite-img">
+      <img src="./artist.jpg" alt="" />
+    </div>
+    <p class="mb-0">Artist Name</p>
+  </div></a
+>
+<a href="">
+  <div class="card-favorite">
+    <div class="card-favorite-img">
+      <img src="./artist.jpg" alt="" />
+    </div>
+    <p class="mb-0">Artist Name</p>
+  </div></a
+>
+<a href="">
+  <div class="card-favorite">
+    <div class="card-favorite-img">
+      <img src="./artist.jpg" alt="" />
+    </div>
+    <p class="mb-0">Artist Name</p>
+  </div></a
+>
+</div> -->

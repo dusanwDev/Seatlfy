@@ -1,0 +1,89 @@
+<div class="banner-sport">
+  <div class="genre-info">
+    <h1 class="text-white mb-0">Sport</h1>
+    <p class="mb-0">Tickets to your favotie sport events</p>
+  </div>
+  <div class="overlay"></div>
+</div>
+<main>
+  <div class="container" style="margin: 0 auto">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1 class="upcoming-title">Upcoming games</h1>
+        <a href="" class="event-link" *ngFor="let sport of sports">
+          <div class="row py-3 row-for-game border-bottom">
+            <div class="col-2">
+              <div class="row">
+                <div
+                  class="col-lg-6 event-day no-padding d-flex justify-content-center align-items-center"
+                >
+                  <h4 class="mb-0">{{ sport.day }}</h4>
+                </div>
+                <div class="col-lg-6 ms-1 no-padding">
+                  <div class="date">
+                    <p class="mb-0 text-center">{{ sport.date }}</p>
+                    <p class="mb-0 text-center">{{ sport.time }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-center">
+              <div class="border-start event-info">
+                <h4 class="mb-0">{{ sport.game }}</h4>
+                <p class="mb-0">{{ sport.venue }}</p>
+              </div>
+            </div>
+            <div
+              class="col-2 ticket d-flex align-items-center justify-content-center"
+            >
+              <button class="get-tikets" (click)="buyTicket(sport)">
+                Get Tickets
+              </button>
+              <button class="to-check-out" (click)="buyTicket(sport)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <div class="ms-4 guarante-card">
+          <header
+            class="header-guarantee d-flex align-items-center justify-content-between pb-3"
+          >
+            <div class="header-h3">
+              <h4 class="mb-0">Shop Tickets Worry Free</h4>
+              <h4 class="mb-0">With Our 100% Guarantee</h4>
+            </div>
+            <div class="img-shield">
+              <img
+                src="https://dtr2k13nvgx2o.cloudfront.net/assets/images/global/guarantee/tn-guarantee-icon-blue-2x.png"
+                alt=""
+              />
+            </div>
+          </header>
+          <div class="worry-free-info-container pt-3">
+            <div class="worry-free-info">
+              <p>
+                <i class="fas fa-check text-success"></i> Same tickets as you
+                ordered, or better.
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Tickets will arrive
+                before the event
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Tickets will be valid
+                for entry
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Refunds for canceled
+                events
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,30 @@
+.logInOrRegister {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 43, 43, 0.9);
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons-modal {
+  border: 2px solid white;
+  width: 40%;
+}
+
+.buttons-modal button {
+  background-color: black;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+}
+
+.buttons-modal button:nth-child(1) {
+  position: relative;
+  border-bottom: 2px solid white;
+}

@@ -1,0 +1,57 @@
+.container {
+  height: 80vh;
+}
+.main-row {
+  height: 100%;
+}
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+.form-control.ng-invalid.ng-touched {
+  border: 4px solid red;
+}
+.form-control.ng-valid.ng-touched {
+  border: 4px solid green;
+}
+.form-control {
+  outline: none;
+  box-shadow: none;
+}
+.col-12 {
+  z-index: 99;
+}
+.btn {
+  display: block;
+  width: 100%;
+  height: 35px;
+  outline: none;
+}
+
+.background-img {
+  background-image: url(https://images.pexels.com/photos/976866/pexels-photo-976866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.register-btn,
+h3 {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  form {
+    width: 100%;
+  }
+  .register-btn,
+  h3 {
+    display: block;
+  }
+}

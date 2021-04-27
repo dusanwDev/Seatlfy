@@ -1,0 +1,189 @@
+<nav class="my-navbar">
+  <div class="left-side-navbar">
+    <a routerLink="/home">
+      <div class="logo">
+        <svg
+          height="40"
+          viewBox="0 0 48 48"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          [ngStyle]="{ fill: changeColors ? 'black' : 'white' }"
+        >
+          <defs><path d="M0 0h48v48H0V0z" id="a" /></defs>
+          <clipPath id="b">
+            <use overflow="visible" xlink:href="#a" />
+          </clipPath>
+          <path
+            clip-path="url(#b)"
+            d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z"
+          />
+        </svg>
+        <h2
+          class="mb-0"
+          [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+        >
+          Seatlfy
+        </h2>
+      </div></a
+    >
+    <ul>
+      <li>
+        <a
+          class="link"
+          [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+          routerLink="categories/sport"
+          >Sport</a
+        >
+      </li>
+      <li>
+        <a
+          class="link"
+          [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+          routerLink="categories/theathres/schedule"
+          >Theathre</a
+        >
+      </li>
+      <li>
+        <a
+          class="link"
+          [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+          routerLink="categories/music/concert"
+          >Music</a
+        >
+      </li>
+      <li>
+        <a
+          class="link"
+          [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+          routerLink="categories/movies"
+          >Movies</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="right-side-navbar">
+    <a
+      class="user"
+      *ngIf="!manipulateLinks"
+      [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+      routerLink="signin"
+      ><i class="fas fa-user"></i
+    ></a>
+
+    <a
+      class="link"
+      [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+      *ngIf="!manipulateLinks"
+      routerLink="signin"
+      >Log In</a
+    ><a
+      class="register link"
+      *ngIf="!manipulateLinks"
+      routerLink="signup"
+      [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+      >Register</a
+    >
+    <a
+      [routerLink]="['/userdashboard', userData.userId]"
+      *ngIf="manipulateLinks"
+      class="text-primary mb-0 mx-1"
+      >{{ userData.name }}</a
+    >
+    <a
+      class="drop"
+      [routerLink]="['/userdashboard', userData.userId]"
+      *ngIf="manipulateLinks"
+      class="mb-0 mx-1 name-logo"
+      >{{ firtLetterOfUserName }}</a
+    >
+    <a
+      *ngIf="userData"
+      class="cart"
+      [routerLink]="['/checkout', userData.userId]"
+      (click)="displayModal()"
+    >
+      <i
+        [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+        class="fas fa-shopping-cart"
+      ></i>
+    </a>
+    <a class="hamburger" (click)="showMenu()">
+      <i
+        [ngStyle]="{ color: changeColors ? 'black' : 'white' }"
+        class="fas fa-bars"
+      ></i
+    ></a>
+  </div>
+</nav>
+<aside class="menu">
+  <header class="d-flex justify-content-between align-items-center px-3">
+    <h1>Menu</h1>
+    <button (click)="showMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+  </header>
+  <ul>
+    <li>
+      <a
+        routerLink="categories/sport"
+        class="text-right px-4 d-block w-100"
+        (click)="showMenu()"
+        >Sport</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="categories/theathres/schedule"
+        class="text-right px-4 d-block w-100"
+        (click)="showMenu()"
+        >Theathres</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="categories/music/concert"
+        class="text-right px-4 d-block w-100"
+        (click)="showMenu()"
+        >Concerts</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="categories/movies"
+        class="text-right px-4 d-block w-100"
+        (click)="showMenu()"
+        >Movies</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="signin"
+        class="text-right px-4 d-block w-100"
+        (click)="showMenu()"
+        *ngIf="manipulateLinks"
+        >Log In
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="signup"
+        class="text-right px-4 d-block w-100"
+        (click)="logOut()"
+        *ngIf="manipulateLinks"
+        >Log Out</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="signup"
+        class="text-right px-4 d-block w-100"
+        (click)="showMenu()"
+        >Register</a
+      >
+    </li>
+  </ul>
+</aside>
+<!-- HEADER FOR USER DASHBOARD -->
+<app-login-alert (click)="removeModal()" *ngIf="!showModal"></app-login-alert>

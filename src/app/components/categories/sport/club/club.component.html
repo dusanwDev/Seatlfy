@@ -1,0 +1,107 @@
+<div
+  class="banner-music d-flex align-items-end w-100"
+  *ngIf="club"
+  [ngStyle]="{ 'background-image': 'url(' + club.img + ')' }"
+>
+  <div class="genre-info">
+    <h1 class="text-white mb-0">{{ club.performer }}</h1>
+    <p class="text-white mt-1 mb-0">{{ club.genre }}</p>
+  </div>
+  <div class="overlay w-100 h-100"></div>
+</div>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="buttons">
+          <span>Sort by : </span>
+          <button class="sort-btn" (click)="newest(games)">Newest</button
+          ><button class="sort-btn" (click)="oldest(games)">Oldest</button>
+          <button
+            class="fav-btn"
+            [disabled]="disableBtn"
+            (click)="addToFavorite()"
+          >
+            To favorites <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        <a class="event-link" *ngFor="let game of games; let i = index">
+          <div class="row py-3 border-bottom">
+            <div class="col-2 date-day-time">
+              <div class="row">
+                <div
+                  class="col-lg-6 justify-content-center event-day no-padding d-flex align-items-center"
+                >
+                  <h4 class="mb-0 game-day-h1">{{ game.day }}</h4>
+                </div>
+                <div class="col-lg-6 justify-content-center ms-1 no-padding">
+                  <div class="date">
+                    <p class="mb-0 text-center">{{ game.date }}</p>
+                    <p class="mb-0 text-center">{{ game.time }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="game-name col-8 d-flex flex-column justify-content-center"
+            >
+              <div class="border-start event-info">
+                <h4 class="mb-0">{{ game.game }}</h4>
+                <p class="mb-0">{{ game.venue }}</p>
+              </div>
+            </div>
+            <div class="col-2 ticket d-flex align-items-center">
+              <button class="get-tikets" (click)="buyTicket(game)">
+                Get Tickets
+              </button>
+              <button class="to-check-out" (click)="buyTicket(game)">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <div class="ms-4 guarante-card">
+          <header
+            class="header-guarantee d-flex align-items-center justify-content-between pb-3"
+          >
+            <div class="header-h3">
+              <h4 class="mb-0">Shop Tickets Worry Free</h4>
+              <h4 class="mb-0">With Our 100% Guarantee</h4>
+            </div>
+            <div class="img-shield">
+              <img
+                class="w-100 h-100"
+                src="https://dtr2k13nvgx2o.cloudfront.net/assets/images/global/guarantee/tn-guarantee-icon-blue-2x.png"
+                alt=""
+              />
+            </div>
+          </header>
+          <div class="worry-free-info-container pt-3">
+            <div class="worry-free-info">
+              <p>
+                <i class="fas fa-check text-success"></i> Same tickets as you
+                ordered, or better.
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Tickets will arrive
+                before the event
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Tickets will be valid
+                for entry
+              </p>
+              <p>
+                <i class="fas fa-check text-success"></i> Refunds for canceled
+                events
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-added-to-cart *ngIf="showAddedToCart"></app-added-to-cart>
+<app-login-alert (click)="removeModal()" *ngIf="!showModal"></app-login-alert>

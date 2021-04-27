@@ -1,0 +1,159 @@
+<div class="container">
+  <div class="row err-row justify-content-center mb-2">
+    <div class="error-display" *ngIf="errorMessage">
+      <h1 class="text-center" class="mb-0 text-center text-danger">{{ errorMessage }}</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-lg-6">
+      <form class="signup" [formGroup]="signUp" (ngSubmit)="onSubmit(signUp)">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="">Name</label>
+              <input class="form-control" type="text" formControlName="name" />
+              <span
+                *ngIf="!signUp.get('name').valid && signUp.get('name').touched"
+              >
+                <span
+                  *ngIf="signUp.get('name').errors['character']"
+                  class="text-danger"
+                  >This field cannot conain numbers or special characters
+                </span>
+                <p
+                  *ngIf="signUp.get('name').errors['required']"
+                  class="text-danger"
+                >
+                  This field is required
+                </p>
+              </span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="">Last Name</label>
+              <input
+                class="form-control"
+                type="text"
+                formControlName="lastname"
+              />
+              <span
+                *ngIf="
+                  !signUp.get('lastname').valid &&
+                  signUp.get('lastname').touched
+                "
+              >
+                <span
+                  *ngIf="signUp.get('lastname').errors['character']"
+                  class="text-danger"
+                  >This field cannot conain numbers or special characters
+                </span>
+                <span
+                  *ngIf="signUp.get('lastname').errors['required']"
+                  class="text-danger"
+                  >This field is required
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            formControlName="password"
+          />
+          <span
+            *ngIf="
+              !signUp.get('password').valid && signUp.get('password').touched
+            "
+          >
+            <span
+              *ngIf="signUp.get('password').errors['passwordError']"
+              class="text-danger"
+            >
+              Password must contain at least one number and has to be at least 6
+              characters
+            </span>
+            <span
+              *ngIf="signUp.get('password').errors['required']"
+              class="text-danger"
+            >
+              This field is required
+            </span>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="">Repeat Password</label>
+          <input
+            class="form-control"
+            type="password"
+            id="repeatpasswordId"
+            formControlName="repeatPassword"
+          />
+          <span
+            *ngIf="
+              !signUp.get('repeatPassword').valid &&
+              signUp.get('repeatPassword').touched
+            "
+          >
+            <span
+              *ngIf="
+                signUp.get('repeatPassword').errors['passwodIsNotMatching']
+              "
+              class="text-danger"
+              >Passwords must match</span
+            >
+            <span
+              *ngIf="signUp.get('repeatPassword').errors['required']"
+              class="text-danger"
+              >This field is required</span
+            >
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="">City</label>
+          <input class="form-control" type="text" formControlName="city" />
+          <span *ngIf="!signUp.get('city').valid && signUp.get('city').touched">
+            <span
+              *ngIf="signUp.get('city').errors['character']"
+              class="text-danger"
+              >This field cannot conain numbers or special characters
+            </span>
+            <span
+              *ngIf="signUp.get('city').errors['required']"
+              class="text-danger"
+              >This field is required</span
+            >
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input class="form-control" type="text" formControlName="email" />
+          <span
+            *ngIf="!signUp.get('email').valid && signUp.get('email').touched"
+          >
+            <span
+              *ngIf="signUp.get('email').errors['required']"
+              class="text-danger"
+              >This field is required</span
+            >
+          </span>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!signUp.valid"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+    <div class="background-img">
+      <div class="overlay"></div>
+    </div>
+  </div>
+</div>

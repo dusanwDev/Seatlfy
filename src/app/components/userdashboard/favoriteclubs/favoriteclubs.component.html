@@ -1,0 +1,17 @@
+<header class="text-center">
+  <h1 class="mb-0">Favorite Clubs</h1>
+</header>
+<div class="ticket-container">
+  <a
+    href=""
+    *ngFor="let club of favoriteClubs"
+    [routerLink]="['/categories/sport/club', club.performer]"
+  >
+    <div class="card-favorite">
+      <div class="card-favorite-img">
+        <img [src]="club.img" alt="" />
+      </div>
+      <p class="mb-0">{{ club.performer }}</p>
+    </div></a
+  >
+</div>

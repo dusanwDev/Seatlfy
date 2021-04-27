@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12">
+    <span>Sort by :</span>
+    <button class="sort-btn" (click)="newest(concerts)">Newest</button
+    ><button class="sort-btn" (click)="oldest(concerts)">Oldest</button>
+  </div>
+</div>
+<a class="event-link" *ngFor="let concert of concerts; let i = index">
+  <div class="row py-3 border-bottom">
+    <div class="col-2">
+      <div class="row">
+        <div
+          class="col-lg-6 justify-content-center event-day no-padding d-flex align-items-center justify-content-center"
+        >
+          <h4 class="mb-0">{{ concert.day }}</h4>
+        </div>
+        <div class="col-lg-6 ms-1 no-padding">
+          <div class="date">
+            <p class="mb-0 text-center">{{ concert.date }}</p>
+            <p class="mb-0 text-center">{{ concert.time }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 d-flex flex-column justify-content-center">
+      <div class="border-start event-info">
+        <h4 class="mb-0">{{ concert.artist }}</h4>
+        <p class="mb-0">{{ concert.venue }}, {{ concert.place }}</p>
+      </div>
+    </div>
+    <div class="col-2 ticket d-flex align-items-center">
+      <button class="get-tikets" (click)="buyTicket(concert)">
+        Get Tickets
+      </button>
+      <button class="to-check-out" (click)="buyTicket(concert)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</a>
+<app-added-to-cart *ngIf="showAddedToCart"></app-added-to-cart>
+<app-login-alert (click)="removeModal()" *ngIf="!showModal"></app-login-alert>

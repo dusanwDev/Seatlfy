@@ -1,0 +1,459 @@
+.video-container {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.video-container video {
+  object-fit: cover;
+}
+.overlay {
+  left: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header-content {
+  z-index: 99;
+  bottom: 25%;
+  color: white;
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  color: rgb(207, 207, 207, 0.8);
+}
+
+.drop-down-header.drop {
+  overflow: hidden;
+}
+
+.input-field {
+  margin-top: 1.8rem;
+  position: relative;
+}
+.input-field input {
+  font-size: 1.5rem;
+  outline: none;
+  padding-left: 0.7em;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 8px;
+}
+.div-search {
+  top: 3.7rem;
+  z-index: 99;
+}
+
+.search-item {
+  display: flex;
+  background-color: white;
+}
+.search-item:hover {
+  background-color: rgb(240, 240, 240);
+}
+.search-img {
+  width: 20%;
+  height: 80px;
+}
+.search-img img {
+  object-fit: cover;
+}
+.search-info {
+  margin-left: 0.5rem;
+}
+.search-info p:nth-child(1) {
+  color: black;
+  font-size: 1.5rem;
+}
+.search-info p:nth-child(2) {
+  color: rgb(92, 92, 92);
+  font-size: 1rem;
+}
+.input-field .fa-search {
+  color: black;
+  right: 1rem;
+  top: 30%;
+  font-size: 1.7rem;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+.upcoming-card {
+  background-color: rgb(31, 31, 31);
+  margin: 0 0.3em;
+}
+.upcoming-card:hover .img-upcoming img {
+  transform: scale(1.2);
+  transition: 0.4s;
+}
+
+.upcoming-events {
+  width: auto;
+}
+.img-upcoming {
+  height: 150px;
+}
+.img-upcoming img {
+  object-fit: cover;
+}
+.upper-card {
+  top: 0;
+  padding: 0.3em;
+  z-index: 99999;
+}
+.upper-card p {
+  background-color: white;
+  padding: 0.3em;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.upper-card i {
+  color: rgba(255, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.3rem;
+  padding: 0.4em;
+  border-radius: 40px;
+}
+.upcoming-card button {
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  background-color: rgb(53, 53, 53);
+  color: white;
+  height: 50px;
+}
+
+.event-date {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0.3em 0.6em;
+}
+.event-date h3 {
+  color: rgb(235, 235, 235);
+}
+
+.event-info {
+  margin-left: 1rem;
+}
+.upcoming-text {
+  padding: 0.5em 0.7em;
+}
+.venue,
+.time {
+  color: rgb(233, 233, 233);
+}
+
+.popular-card {
+  position: relative;
+  padding: 0.2em 0.4em;
+  width: 100%;
+  height: 100%;
+}
+.popular-card .pupular-info {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.6em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.3em 0.6em;
+  border-radius: 10px;
+  color: white;
+  margin: 0 0.5em;
+}
+
+.pupular-info h4 {
+  font-size: 1.2rem;
+}
+.popular-img {
+  height: 181px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.popular-img img {
+  object-fit: cover;
+}
+
+.category {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 180px;
+  margin: 0 0.3em;
+}
+
+.music {
+  background-image: url(../../../assets/media/music.jpg);
+}
+.sport {
+  background-image: url(../../../assets/media/sport.jpg);
+}
+.theathre {
+  background-image: url(../../../assets/media/theathre.jpg);
+}
+.movies-cat {
+  background-image: url(https://i.hurimg.com/i/hdn/75/0x0/5efd9b977152d8036c470a49.jpgjpg);
+  height: 180px;
+}
+.category p {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.popular-card.sport-inner {
+  margin-left: 1rem;
+  height: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.popular-card.sport-inner .popular-img {
+  overflow: hidden;
+}
+.popular-card.sport-inner .popular-img img {
+  object-fit: cover;
+  /* overflow: hidden; */
+}
+
+.theatre-section {
+  height: 300px;
+}
+
+.to-header {
+  border-radius: 45px;
+  bottom: 0.7em;
+  right: 1em;
+  z-index: 99999;
+  background-color: black;
+  font-size: 1.5rem;
+  padding: 0.3em 0.6em;
+  opacity: 0;
+  transition: all 0.4s;
+}
+.to-header.vissible {
+  opacity: 1;
+}
+@media screen and (min-width: 1900px) {
+  main {
+    max-width: 1900px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 993px) {
+  .performer {
+    font-size: 1.6rem;
+  }
+  .venue,
+  .time {
+    font-size: 0.8rem;
+  }
+  .upcoming-card {
+    margin: 0 0.1em;
+  }
+}
+@media screen and (max-width: 769px) {
+  .header-content h1 {
+    font-size: 4.2rem;
+  }
+  .upcoming-card {
+    display: flex;
+    position: relative;
+    height: 200px;
+    margin-top: 0.5rem;
+  }
+  .upcoming-text {
+    width: 100%;
+    padding-right: 0;
+    padding-top: 2rem;
+    padding-left: 0;
+  }
+  .img-upcoming {
+    width: 200px;
+    height: 100%;
+  }
+  .performer {
+    font-size: 1.8rem;
+  }
+  .venue,
+  .time {
+    font-size: 1rem;
+    color: rgb(192, 192, 192);
+  }
+  .time {
+    display: inline;
+  }
+  .event-date {
+    display: none;
+  }
+  .popular-card.sport-inner {
+    margin-top: 2rem;
+  }
+  .upcoming-card button {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    height: 23%;
+  }
+  .upper-card {
+    right: 0;
+  }
+  .popular-card {
+    position: relative;
+    display: flex;
+    padding: 0;
+    margin: 0.4em 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(202, 202, 202);
+  }
+  .popular-card .pupular-info {
+    position: absolute;
+    bottom: 0.6em;
+    padding: 0 !important;
+    left: calc(100px + 10px);
+    z-index: 99999;
+    border-radius: 0px;
+    color: black;
+    background-color: white;
+    overflow: hidden;
+  }
+  .popular-img {
+    width: 100px;
+    height: 50px;
+    z-index: 9999;
+  }
+  .popular-img.theathre-img {
+    width: 100px !important;
+    height: 50px !important;
+  }
+  .popular-img.theathre-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .theatre-section {
+    height: auto;
+  }
+
+  .category {
+    margin-top: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .popular-card.sport-inner {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  .upper-card i,
+  .upper-card p {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .video-background {
+    padding: 0 0.8em;
+  }
+  .header-content h1 {
+    font-size: 4rem;
+  }
+  .header-content p {
+    font-size: 1.2rem;
+  }
+  .input-field input {
+    font-size: 1.2rem;
+  }
+  .upcoming-card {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+  }
+  .img-upcoming {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 0;
+  }
+  .upper-card {
+    width: 100%;
+  }
+  .img-upcoming img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .performer {
+    font-size: 1.6rem;
+  }
+  .venue {
+    font-size: 1rem;
+  }
+
+  .upcoming-text {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 78%;
+    position: relative;
+    z-index: 9;
+  }
+  .event-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 1.7em;
+    margin-left: 0;
+  }
+
+  .upper-card i,
+  .upper-card p {
+    display: inline;
+  }
+  .to-header {
+    font-size: 1.3rem;
+    padding: 0.3em 0.6em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .input-field {
+    width: 90%;
+  }
+
+  .movie-premiere {
+    background-position: center;
+  }
+  .input-field i {
+    display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  .search-info p:nth-child(1) {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 280px) {
+  .header-content {
+    padding-right: 0.3em;
+  }
+  .input-field {
+    width: 90%;
+  }
+  .input-field input {
+    font-size: 1rem;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+  }
+
+  .video-background {
+    padding: 0 0.2em;
+  }
+}

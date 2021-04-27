@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.movie-row {
+  padding-left: 0.6em;
+}
+.banner-theathre {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-image: url(https://prolog.rs/upload/article/23613_Joker%202019.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+.genre-info {
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  z-index: 99;
+}
+
+.genre-info h1 {
+  font-size: 4.7rem;
+  color: white;
+}
+.genre-info p {
+  font-size: 1.4rem;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+.get-tikets {
+  border: none;
+  outline: none;
+  padding: 0.2em 0.5em;
+  background-color: rgb(206, 239, 250);
+  color: blue;
+  font-size: 1.2rem;
+}
+.event-link {
+  text-decoration: none;
+  color: black;
+}
+.event-info {
+  padding-left: 0.8em;
+  /* border-left: 1px solid rgb(160, 160, 160); */
+}
+.event-link:hover .get-tikets {
+  color: white;
+  background-color: blue;
+  transition: all 0.5s;
+}
+.ticket {
+  padding: 0 !important;
+}
+.ticket button {
+  background-color: transparent;
+}
+.to-check-out {
+  display: none;
+  border: none;
+  outline: none;
+  color: blue;
+}
+.fa-chevron-right {
+  font-size: 1.4rem;
+}
+
+.fa-check {
+  color: green;
+}
+.place {
+  font-size: 1.5rem;
+}
+.img-shield {
+  width: 40px;
+  height: 40px;
+}
+.img-shield img {
+  object-fit: contain;
+}
+.header-guarantee {
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.header-guarantee {
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.sort-btn,
+.fav-btn {
+  background-color: inherit;
+  margin: 0 0.3em;
+  border: 1px solid blue;
+  padding: 0.3em 0.6em;
+}
+
+main {
+  margin-top: calc(55vh - 20px);
+}
+@media screen and (max-width: 768px) {
+  .event-day {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .title-upcoming {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .get-tikets {
+    display: none;
+  }
+  .to-check-out {
+    display: inline;
+  }
+  .genre-info {
+    padding-bottom: 1.2em;
+    padding-left: 0.8em;
+  }
+  .genre-info h1 {
+    font-size: 2.7em;
+  }
+  .genre-info p {
+    font-size: 1.1rem;
+  }
+}

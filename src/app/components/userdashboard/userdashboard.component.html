@@ -1,0 +1,101 @@
+<header class="header">
+  <div class="left-side">
+    <a routerLink="">
+      <div class="logo">
+        <svg
+          height="40"
+          viewBox="0 0 48 48"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          style="fill: black"
+        >
+          <defs><path d="M0 0h48v48H0V0z" id="a" /></defs>
+          <clipPath id="b">
+            <use overflow="visible" xlink:href="#a" />
+          </clipPath>
+          <path
+            clip-path="url(#b)"
+            d="M8 36v6h6v-6h20v6h6V30H8zm30-16h6v6h-6zM4 20h6v6H4zm30 6H14V10c0-2.21 1.79-4 4-4h12c2.21 0 4 1.79 4 4v16z"
+          />
+        </svg>
+        <h2 class="mb-0">Seatlfy</h2>
+      </div></a
+    >
+    <div class="link">
+      <a routerLink="boughttickets" class="px-0">Bought Tickets</a>
+    </div>
+    <div class="link">
+      <a routerLink="favoriteclubs" class="px-0">Favorite Clubs</a>
+    </div>
+    <div class="link">
+      <a routerLink="favoriteartists" class="px-0">Favorite Artist</a>
+    </div>
+    <div class="link">
+      <a routerLink="favoritetheathres" class="px-0">Favorite Theathres</a>
+    </div>
+  </div>
+  <div class="right-side">
+    <button class="hamburger" (click)="showMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+<aside class="menu">
+  <header class="d-flex justify-content-between align-items-center px-3">
+    <h1>Menu</h1>
+    <button (click)="showMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+  </header>
+  <ul
+    class="d-flex flex-column justify-content-center align-items-end overflow-hidden"
+  >
+    <li>
+      <a
+        class="text-right d-inline-block text-decoration-none"
+        (click)="showMenu()"
+        routerLink="boughttickets"
+        >Bought Tickets</a
+      >
+    </li>
+    <li>
+      <a
+        class="text-right d-inline-block text-decoration-none"
+        (click)="showMenu()"
+        routerLink="favoriteclubs"
+        >Favorite Clubs</a
+      >
+    </li>
+    <li>
+      <a
+        class="text-right d-inline-block text-decoration-none"
+        (click)="showMenu()"
+        routerLink="favoriteartists"
+        >Favorite Artist</a
+      >
+    </li>
+    <li>
+      <a
+        class="text-right d-inline-block text-decoration-none"
+        (click)="showMenu()"
+        routerLink="favoritetheathres"
+        >Favorite Theathres</a
+      >
+    </li>
+    <li>
+      <a
+        class="text-right d-inline-block text-decoration-none"
+        (click)="logOut()"
+        >Logout</a
+      >
+    </li>
+  </ul>
+</aside>
+<main>
+  <div class="userdash-display w-100">
+    <div class="load-route">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

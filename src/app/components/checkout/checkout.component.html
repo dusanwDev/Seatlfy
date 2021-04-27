@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-4 table-responsive">
+      <table class="table table-bordered">
+        <thead class="bg-dark">
+          <th class="text-white" style="border: none">Performer</th>
+          <th class="text-white" style="border: none">Date</th>
+          <th class="text-white" style="border: none">Venue</th>
+          <th class="text-white" style="border: none">Price</th>
+          <th class="text-white" style="border: none">Remove</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of checkoutTickets; let i = index">
+            <td>
+            {{ticket.show}}  {{ ticket.artist }} {{ ticket.performer }} {{ ticket.game }}
+            </td>
+            <td>
+              {{ ticket.day }} {{ ticket.date }} {{ ticket.dayName }}
+              {{ ticket.dayNumber }} {{ ticket.month }} {{ ticket.time }}
+            </td>
+            <td>{{ ticket.venue }} {{ticket.theathreId}}</td>
+
+            <td ([ngModel])="(total)">{{ ticket.price | currency: "USD" }}</td>
+            <td class="minus" class="text-center">
+              <button class="minus-button" (click)="Remove(i)">
+                <i class="fas fa-minus-circle"></i>
+              </button>
+            </td>
+          </tr>
+          <tr class="no-border">
+            <td></td>
+            <td></td>
+            <td class="total" class="fw-bolder">Total</td>
+            <td class="total-price" class="fw-bolder">
+              {{ total | currency: "USD" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 d-flex justify-content-start">
+      <button class="home-btn" routerLink="/home">Back to Home</button>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+      <button class="confirm-btn" (click)="onConfirm()">Confirm</button>
+    </div>
+  </div>
+</div>
