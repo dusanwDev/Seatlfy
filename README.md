@@ -1,5 +1,5 @@
 # Seatlfy
-LIVE VERSION : https://ng-complete-guide-c0062.web.app/home
+This is my first bigger Angular website. the goal was to excerise my newly gained skills.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
